@@ -1,0 +1,30 @@
+
+<!-- <div>
+  <h4>Welcome {{sessionStorage['name']}}
+  </h4>
+</div> -->
+
+<div class="form" style="margin-top: 50px;">
+
+</div><div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="form">
+        <div class="form-group">
+          <span style="font-weight: bold; font-size: 20px" class="label label-danger">{{message}}</span>
+          <label for="email">Email</label>
+          <input [(ngModel)]="username" type="email" class="form-control">
+          
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input [(ngModel)]="password" type="password" class="form-control">
+        </div>
+        <div class="form-group">
+          <button (click)="onLogin()" class="btn btn-success">Login</button>
+          <a routerLink="/signup" class="btn btn-warning float-right">Signup</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>

@@ -1,0 +1,17 @@
+<div class="row" style="margin-top: 10px;">
+  
+  <div class="col-md-3" *ngFor="let book of books">
+      <div class="card">
+          <div class="card-body">
+             <h5 class="card-title"><strong>Title: </strong>{{book['Title']}}</h5>
+             <div class="Author"><strong>Book_id: </strong>{{book['Book_id']}}</div>
+             <div class="Author"><strong>Author: </strong>{{book['Author']}}</div>
+             <div class="price"><strong>Price: </strong>{{book['Price']}}</div>
+            <!--  <div class="Description"><strong>Description: </strong>{{book['Description']}}</div> -->
+             <button style="margin-top: 10px;" (click)="onView(book)" class="btn btn-success btn-sm">View</button>
+             <!-- <button style="margin-top: 10px;" routerLink="/view/{{book.Book_id}}" class="btn btn-danger">View</button> -->
+          </div>
+      </div>
+
+  </div>
+</div>

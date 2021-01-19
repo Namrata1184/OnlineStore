@@ -1,0 +1,64 @@
+<h2 style="text-align: center; color: blueviolet">Register Here</h2>
+<div class="col-md-3"></div>
+<div class="col-md-9">
+<form #myForm="ngForm" (ngSubmit)="AddUser(myForm)">
+        
+    
+        <div class="form-group">
+            <label for="first_name">First Name<span style="color: red" class="required">*</span></label>
+            <input ngModel type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter first_name" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="last_name">Last Name<span style="color: red" class="required">*</span></label>
+            <input ngModel type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter last_name" required>
+        </div>
+        <div class="form-group">
+            <label for="mob_no">Mob</label>
+            <input ngModel type="text" class="form-control" id="mob_no" name="mob_no" placeholder="Enter mob_no" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email<span style="color: red" class="required">*</span></label>
+            <input ngModel type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password<span style="color: red" class="required">*</span></label>
+            <input ngModel type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+        </div>
+        <div class="form-group">
+            <label for="Address">Address: &nbsp;</label>
+            <!-- <input ngModel type="text" class="form-control" name="city" id="city" placeholder="enter city" > -->
+            <select ngModel style="width: 150px" name="Address" id="Address">
+                <option *ngFor="let ct of country">{{ct.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="city">City: &nbsp;</label>
+            <!-- <input ngModel type="text" class="form-control" name="city" id="city" placeholder="enter city" > -->
+            <select ngModel style="width: 100px" name="city" id="city">
+                <option *ngFor="let c of city">{{c.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="pincode">PinCode:</label>
+            <input ngModel type="number" class="form-control" name="pincode" id="pincode" placeholder="Enter pincode" >
+        </div>
+        
+        <div class="form-group">
+            <label for="country">Country: &nbsp;</label>
+            <!-- <input ngModel type="text" class="form-control" name="city" id="city" placeholder="enter city" > -->
+            <select ngModel style="width: 150px" name="country" id="country">
+                <option *ngFor="let ct of country">{{ct.name}}</option>
+            </select>
+        </div>
+         <button type="submit" class="btn btn-primary" (click)="AddUser(myForm)">Submit</button>
+        <button style="float: right" type="button" class="btn btn-success" (click)="GoBackHome()">Go Back to Home</button>
+        <br>
+        
+            
+        <span class="label label-warning">{{message}}</span>
+       
+</form>
+</div>

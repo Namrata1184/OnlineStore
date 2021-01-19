@@ -1,0 +1,29 @@
+<h2 style="color: blueviolet;margin-bottom: 30px;">Description</h2>
+<div class="col-md-4"></div>
+<div class="col-md-6">
+    <div class="container" class="content" style="text-align:justify">
+        
+        <h4>Title: &nbsp {{Title}}</h4>
+        <br>
+        <h4>Author Name: {{Author}}</h4>
+        <br>
+        <h3>Summary:</h3>
+        &nbsp;&nbsp;&nbsp;<h4>{{Description}}.</h4>
+        <br>
+        <h4>Price:&nbsp;&nbsp;{{Price}}</h4>
+        <br>
+        <h4>ISBN:&nbsp;&nbsp;{{ISBN}}</h4>
+        <br>
+        <h4>Available Copies:&nbsp;&nbsp;{{count}}</h4>
+        <br>
+        <div class="form-group">
+        <label for="">Quantity</label>
+        <input [(ngModel)]="quantity" type="number" class="form-control">
+        </div>
+       <div >
+            <button style="font-size: 16px;" type="button" (click)="addToCart()" class="btn btn-warning">Add to Cart</button>
+            <button type="button" routerLink="/gallery" class="btn btn-success float-right" style="margin-right: 10px;">Previous Page</button>
+       </div>
+    </div>
+</div>
+

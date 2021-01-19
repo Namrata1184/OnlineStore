@@ -1,0 +1,44 @@
+<div class="card" style="margin-top: 20px;">
+    <div class="card-header">
+      <button (click)="addBook()" class="btn success btn-success float-right">Add</button>
+      <button type="button" routerLink="/dashboard" class="btn btn-success float-right" style="margin-right: 10px;">Dashboard</button>
+        <h4>Book List</h4>
+    </div>
+    <div class="card-body">
+      <!--   <button (click)="loadBooks()" style="margin-bottom: 10px;" class="btn bt-sm btn-success float-right">Add</button> -->
+       <!--  <h4 *ngIf="books.length == 0">There is no book at the moment.</h4> -->
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th style="width: 30px;">No</th>
+      <th>Id</th>
+      <th>Title</th>
+      <th style="width: 100px;">Author</th>
+      <th style="width: 150px;">Total books</th>
+      <th style="width: 150px;">ISBN</th>
+      <th style="width: 150px;">Price</th>
+      <th style="width: 150px;">Image</th>  
+      <th style="width: 150px;">Action</th>  
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books;let index=index">
+     <td>{{index + 1}}</td>
+      <td>{{book['Book_id']}}</td>
+      <td>{{book['Title']}}</td>
+      <td>{{book['Author']}}</td>
+      <td>{{book['count']}}</td>
+      <td>{{book['ISBN']}}</td>
+      <td>{{book['Price']}}</td>
+      <td>{{book['image']}}</td>
+    <td>
+        <button (click)="onEdit(book)" class="btn btn-warning btn-sm">Edit</button>
+        <button (click)="onDelete(book)" style="margin-left: 10px;" class="btn btn-danger btn-sm">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+</div>
+
