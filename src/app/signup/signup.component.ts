@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { DataService } from './../data.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -8,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+
+  public city = [{name:"kolhapur"},{name:"Pune"},{name:"Satara"},{name:"Nagpur"},{name:"Sangali"}];
+
+public state = [{name:"Maharashtra"},{name:"AP"},{name:"MP"},{name:"UP"},{name:"Panjab"},{name:"Keral"}];
  
   user:{"role":"CUSTOMER"};
   constructor(private router:Router,
-    private service:DataService) { }
+    private service:DataService,
+    private toastr:ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -46,7 +52,8 @@ export class SignupComponent implements OnInit {
     this.service.AddUserData(this.user).subscribe(response=>{
       if(response['status']=='success')
       {
-        console.log('registered successfully')
+        this.toastr.success('registered successfully')
+        this.router.navigate(['/login'])
       }
       
     }

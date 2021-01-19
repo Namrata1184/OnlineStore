@@ -14,13 +14,13 @@
             <input ngModel type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter last_name" required>
         </div>
         <div class="form-group">
-            <label for="mob_no">Mob</label>
-            <input ngModel type="text" class="form-control" id="mob_no" name="mob_no" placeholder="Enter mob_no" required>
+            <label for="contact_no">Mob</label>
+            <input ngModel type="text" class="form-control" id="contact_no" name="contact_no" placeholder="Enter mob_no" required>
         </div>
 
         <div class="form-group">
-            <label for="email">Email<span style="color: red" class="required">*</span></label>
-            <input ngModel type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+            <label for="username">Email<span style="color: red" class="required">*</span></label>
+            <input ngModel type="email" class="form-control" id="username" name="username" placeholder="Enter email" required>
         </div>
 
         <div class="form-group">
@@ -29,10 +29,7 @@
         </div>
         <div class="form-group">
             <label for="Address">Address: &nbsp;</label>
-            <!-- <input ngModel type="text" class="form-control" name="city" id="city" placeholder="enter city" > -->
-            <select ngModel style="width: 150px" name="Address" id="Address">
-                <option *ngFor="let ct of country">{{ct.name}}</option>
-            </select>
+            <input ngModel type="text" class="form-control" id="address" name="address" placeholder="Your place mark" required>
         </div>
         <div class="form-group">
             <label for="city">City: &nbsp;</label>
@@ -42,15 +39,15 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="pincode">PinCode:</label>
-            <input ngModel type="number" class="form-control" name="pincode" id="pincode" placeholder="Enter pincode" >
+            <label for="zip">PinCode:</label>
+            <input ngModel type="number" class="form-control" name="zip" id="zip" placeholder="Enter pincode" >
         </div>
         
         <div class="form-group">
-            <label for="country">Country: &nbsp;</label>
+            <label for="country">State: &nbsp;</label>
             <!-- <input ngModel type="text" class="form-control" name="city" id="city" placeholder="enter city" > -->
             <select ngModel style="width: 150px" name="country" id="country">
-                <option *ngFor="let ct of country">{{ct.name}}</option>
+                <option *ngFor="let s of state">{{s.name}}</option>
             </select>
         </div>
          <button type="submit" class="btn btn-primary" (click)="AddUser(myForm)">Submit</button>
@@ -58,7 +55,7 @@
         <br>
         
             
-        <span class="label label-warning">{{message}}</span>
+     
        
 </form>
 </div>

@@ -10,6 +10,8 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from 
 export class AdminService implements CanActivate{
 
  
+
+ 
   constructor( private router:Router,
     private httpclient:HttpClient,
     private toastr:ToastrService) { }
@@ -45,6 +47,20 @@ login(email:string,password:string)
       return false
     }
 
+    getUser(){
+      const url="http://localhost:7071/users/count"
+      return this.httpclient.get(url)
+    }
+
+    getBooks(){
+      const url="http://localhost:7071/books/count"
+      return this.httpclient.get(url)
+    }
+
+    getcart(){
+      const url="http://localhost:7071/cart/count"
+      return this.httpclient.get(url)
+    }
     
 
 }
