@@ -68,10 +68,9 @@ export class BookService {
 
     }
 
-    addBook(Title: string, Description: string, ISBN: string, Price: number, count: number, Author: string, selectedFile: File) {
+    addBook(Title: string, Description: string, ISBN: string, Price: number, count: number, Author: string) {
      console.log('in UploadImage')
-      const uploadData = new FormData();
-      uploadData.append("imageFile", selectedFile);
+     
       const url='http://localhost:7071/books'
       const book = {
         Title:Title,
@@ -82,8 +81,7 @@ export class BookService {
         count:count
       }
       const body={
-        Book: book,
-        uploadData: uploadData
+        Book: book
       }
       return this.httpClient.post(url,body);
     }

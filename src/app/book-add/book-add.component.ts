@@ -15,7 +15,7 @@ export class BookAddComponent implements OnInit {
   count=0
   ISBN=''
   Author=''
-  selectedFile: File = null;
+
 
   book=null
   constructor(
@@ -63,7 +63,7 @@ export class BookAddComponent implements OnInit {
       })
   }else{
       //insert
-      this.bookService.addBook(this.Title,this.Description, this.ISBN, this.Price, this.count,this.Author,this.selectedFile)
+      this.bookService.addBook(this.Title,this.Description, this.ISBN, this.Price, this.count,this.Author)
       .subscribe(response=>{
         if(response['status']=='success'){
           console.log('add book in bookcomponent')
@@ -75,13 +75,5 @@ export class BookAddComponent implements OnInit {
 
 }
 
-  onFileChanged(file: File): void {
-    this.selectedFile=file;
 
-  }
-
- /*  onUpload(){
-    this.router.navigate(['/upload-image'], {queryParams: {id: this.book['id']}})
-  }
- */
 }

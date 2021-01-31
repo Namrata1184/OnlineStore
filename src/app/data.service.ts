@@ -7,6 +7,7 @@ import { identifierModuleUrl, Identifiers } from '@angular/compiler';
 })
 export class DataService {
  
+ 
 
    url='http://localhost:7071/cart';
 
@@ -62,6 +63,59 @@ export class DataService {
   {
     console.log(user);
     return this.http.post("http://localhost:7071/users/registration",user);
+  }
+
+  getUserDetails(user_id:number){
+    const url='http://localhost:7071/users/details/'
+    const request=this.http.get(url+user_id)
+    return request
+  }
+
+
+  updateProfile(user_id:number, first_name: string, Last_name: string, contact_no: string, username: string, email: string) {
+      
+    const body={
+        
+     user_id:user_id,
+     first_name:first_name,
+     Last_name:Last_name,
+     contact_no:contact_no,
+     username:username,
+     email:email
+      } 
+       
+      const url='http://localhost:7071/users'
+    const request=this.http.put(url+"/"+user_id,body)
+    return request
+
+
+  }
+  /* addCartItems(Book_id:number,Price:number,Quantity:number,Title:string,user_id:number){
+    console.log('service method')
+    console.log(user_id)
+    
+    const body={
+      Book_id:Book_id,
+      Price:Price,
+      quantity:Quantity,
+      user_id:user_id,
+      Title:Title,
+
+   
+    }
+    sessionStorage['cartItem']=body.Title;
+    console.log(body)
+    
+    return this.http.post(this.url + "/add", body)
+  }*/
+
+  addPayment(user_id:number) {
+     console.log('service method')
+     const url='http://localhost:7071/users'
+     const body={ }
+   
+    
+    return this.http.post(url + "/payment/"+user_id, body)
   }
 
 }

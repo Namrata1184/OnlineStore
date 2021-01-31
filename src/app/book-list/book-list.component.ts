@@ -67,9 +67,12 @@ export class BookListComponent implements OnInit {
              
             }else{
               this.toastr.success(response['message'])
-              this.router.navigate(['/book-list'])
+              //this.router.navigate(['/book-list'])
+             
+             
             }
-
+            this.loadBooks();
+           
           })
      }
       

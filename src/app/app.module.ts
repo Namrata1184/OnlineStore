@@ -26,7 +26,7 @@ import{ToastrModule} from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ViewComponent } from './view/view.component';
 import { OrdersComponent } from './orders/orders.component';
-import { PaymentComponent } from './payment/payment.component';
+
 
 
 
@@ -48,7 +48,7 @@ import { PaymentComponent } from './payment/payment.component';
     PreviewComponent,
     ViewComponent,
     OrdersComponent,
-    PaymentComponent,
+   
    
   ],
   imports: [

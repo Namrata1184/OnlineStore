@@ -1,4 +1,4 @@
-import { PaymentComponent } from './payment/payment.component';
+
 import { OrdersComponent } from './orders/orders.component';
 import { CustomerService } from './customer.service';
 import { ViewComponent } from './view/view.component';
@@ -31,7 +31,7 @@ const routes: Routes = [
   {path:'gallery',component:GalleryComponent,canActivate:[CustomerService]},
   {path:'view',component:ViewComponent,canActivate:[CustomerService]},
   {path:'orders',component:OrdersComponent,canActivate:[AdminService]},
-  {path:'payment',component:PaymentComponent,canActivate:[CustomerService]},
+ 
  
 
   {path:'login',component:LoginComponent},
