@@ -44,7 +44,7 @@ export class SignupComponent implements OnInit {
        if(response['status']=='error'){
 
        }else{
-         console.log('get book details')
+         console.log('get user details')
        this.user1=response['data']
          console.log(this.user1)
        this.first_name=this.user1['first_name']
