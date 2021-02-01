@@ -68,7 +68,7 @@ export class BookService {
 
     }
 
-    addBook(Title: string, Description: string, ISBN: string, Price: number, count: number, Author: string) {
+   /*  addBook(Title: string, Description: string, ISBN: string, Price: number, count: number, Author: string) {
      console.log('in UploadImage')
      
       const url='http://localhost:7071/books'
@@ -84,25 +84,9 @@ export class BookService {
         Book: book
       }
       return this.httpClient.post(url,body);
-    }
-    /* addBook(title:string,description:string,price:number,author:string,isbn:string,count:number,selectedFile: File){
-      const uploadData = new FormData();
-      uploadData.append("imageFile", selectedFile);
-      const url='http://localhost:7071/books'
-      const body={
-        Title:title,
-        Description:description,
-        Price:price,
-        Author:author,
-        ISBN:isbn,
-        count:count
-
-      }
-      uploadData.append("dtls",JSON.stringify(body));
-      return this.httpClient.post(url,uploadData,{ responseType: 'text' })
-    } 
-  */
-    insertBook(Title: string, Description: string, ISBN: string, Price: number, count: number, Author: string) {
+    } */
+   
+    addBook(Title: string, Description: string, ISBN: string, Price: number, count: number, Author: string) {
       
       const body={
           
