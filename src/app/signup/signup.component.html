@@ -1,4 +1,4 @@
-<h2 style="text-align: center; color: blueviolet">Register Here</h2>
+<h2 style="text-align: center; color: blueviolet">Profile</h2>
 <div class="col-md-3"></div>
 <div class="col-md-9">
 <form #myForm="ngForm" (ngSubmit)="AddUser(myForm)">
@@ -17,9 +17,13 @@
             <label for="contact_no">Mob</label>
             <input [(ngModel)]="contact_no" type="text" class="form-control" id="contact_no" name="contact_no" placeholder="Enter mob_no" required>
         </div>
+        <div class="form-group">
+            <label for="username">Username<span style="color: red" class="required">*</span></label>
+            <input [(ngModel)]="username" type="username" class="form-control" id="username" name="username" placeholder="Enter email" required>
+        </div>
 
         <div class="form-group">
-            <label for="username">Email<span style="color: red" class="required">*</span></label>
+            <label for="email">Email<span style="color: red" class="required">*</span></label>
             <input [(ngModel)]="email" type="email" class="form-control" id="username" name="username" placeholder="Enter email" required>
         </div>
 
@@ -43,13 +47,7 @@
             <input [(ngModel)]="zip" type="number" class="form-control" name="zip" id="zip" placeholder="Enter pincode" >
         </div>
         
-        <div class="form-group">
-            <label for="state">State: &nbsp;</label>
-            <input [(ngModel)]="state" type="text" class="form-control" name="state" id="state" placeholder="enter state" >
-           <!--  <select ngModel style="width: 150px" name="country" id="country">
-                <option *ngFor="let s of state">{{s.name}}</option>
-            </select> -->
-        </div>
+       
          <button type="submit" class="btn btn-primary" (click)="AddUser(myForm)">Submit</button>
         <button style="float: right" type="button" class="btn btn-success" (click)="GoBackHome()">Go Back to Home</button>
         <br>
